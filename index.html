@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="author" content="Allan Rono" />
+<meta name="description" content="Allan Rono — front-end engineer building durable, accessible, human-centered web software. JavaScript, TypeScript, React, performance, and craft." />
+<title>Allan Rono — Front-End Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<script>
+  // Set theme before first paint to avoid a flash of the wrong icon/colors.
+  (function () {
+    try {
+      var t = localStorage.getItem('theme');
+      var r = document.documentElement;
+      if (t === 'dark' || t === 'light') { r.setAttribute('data-theme', t); r.setAttribute('data-resolved', t); }
+      else { r.setAttribute('data-resolved', matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#main" class="brand"><span class="dot" aria-hidden="true"></span>allan_rono</a>
+    <div style="display:flex; align-items:center; gap:1.4rem;">
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#stack">Stack</a>
+        <a href="#work">Work</a>
+        <a href="#writing">Writing</a>
+        <a href="#principles">Principles</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-btn" id="theme-btn" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Front-End Engineer · Nairobi</span>
+      <h1>I build web software that's <span class="accent">fast, accessible,</span> and made to last.</h1>
+      <p class="lede">I care about craft and the people on the other side of the screen. Great work in the AI era is still fundamentally human — my job is to set a high standard for how we build it together.</p>
+      <div class="cta-row">
+        <a href="#work" class="btn btn-primary">See the work →</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+      <div class="meta-strip">
+        <div><b>TypeScript · React</b>Core stack</div>
+        <div><b>Performance &amp; a11y</b>Non-negotiables</div>
+        <div><b>Next.js · Vite</b>Tooling</div>
+        <div><b>Available</b>For new work</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">01</span>
+        <div>
+          <h2 class="sec-title">The stack, by system</h2>
+          <p class="sec-sub">Not a checklist — the parts of the platform I actually reason about.</p>
+        </div>
+      </div>
+      <div class="stack-grid">
+
+        <div class="mod reveal">
+          <div class="mod-top"><span class="mod-name">Language core</span><span class="mod-id">js/ts</span></div>
+          <ul>
+            <li>event loop &amp; microtasks</li><li>closures</li><li>prototypes</li><li>this binding</li><li>async patterns</li><li>typed mechanics</li>
+          </ul>
+        </div>
+
+        <div class="mod reveal">
+          <div class="mod-top"><span class="mod-name">Modern CSS</span><span class="mod-id">layout</span></div>
+          <ul>
+            <li>Grid &amp; Flexbox</li><li>container queries</li><li>cascade layers</li><li>:has()</li><li>logical properties</li><li>scroll-driven anim</li>
+          </ul>
+        </div>
+
+        <div class="mod reveal">
+          <div class="mod-top"><span class="mod-name">Responsive design</span><span class="mod-id">adaptive</span></div>
+          <ul>
+            <li>mobile-first</li><li>fluid type · clamp()</li><li>smart breakpoints</li><li>no query overload</li>
+          </ul>
+        </div>
+
+        <div class="mod reveal">
+          <div class="mod-top"><span class="mod-name">Rendering &amp; perf</span><span class="mod-id">cwv</span></div>
+          <ul>
+            <li>critical render path</li><li>reflow vs repaint</li><li>Core Web Vitals</li><li>lazy loading</li><li>code-splitting</li><li>sane memoization</li>
+          </ul>
+        </div>
+
+        <div class="mod reveal">
+          <div class="mod-top"><span class="mod-name">Accessibility</span><span class="mod-id">a11y</span></div>
+          <ul>
+            <li>semantic HTML</li><li>ARIA roles</li><li>keyboard nav</li><li>screen readers</li><li>contrast</li><li>focus management</li>
+          </ul>
+        </div>
+
+        <div class="mod reveal">
+          <div class="mod-top"><span class="mod-name">Client security</span><span class="mod-id">sec</span></div>
+          <ul>
+            <li>XSS prevention</li><li>CSP</li><li>secure cookies</li><li>input sanitization</li><li>CORS</li>
+          </ul>
+        </div>
+
+        <div class="mod reveal">
+          <div class="mod-top"><span class="mod-name">Components</span><span class="mod-id">arch</span></div>
+          <ul>
+            <li>compound components</li><li>hooks composition</li><li>no prop drilling</li><li>render-props → modern</li>
+          </ul>
+        </div>
+
+        <div class="mod reveal">
+          <div class="mod-top"><span class="mod-name">State</span><span class="mod-id">state</span></div>
+          <ul>
+            <li>Context</li><li>Zustand · Jotai</li><li>Redux Toolkit</li><li>server components</li><li>right tool, right job</li>
+          </ul>
+        </div>
+
+        <div class="mod reveal">
+          <div class="mod-top"><span class="mod-name">Testing</span><span class="mod-id">qa</span></div>
+          <ul>
+            <li>Vitest · Jest</li><li>Testing Library</li><li>Playwright · Cypress</li><li>visual regression</li>
+          </ul>
+        </div>
+
+        <div class="mod reveal">
+          <div class="mod-top"><span class="mod-name">Debug &amp; DevTools</span><span class="mod-id">dx</span></div>
+          <ul>
+            <li>perf profiling</li><li>network throttling</li><li>React DevTools</li><li>CSS containment</li>
+          </ul>
+        </div>
+
+        <div class="mod reveal">
+          <div class="mod-top"><span class="mod-name">Build tools</span><span class="mod-id">build</span></div>
+          <ul>
+            <li>Vite</li><li>Turbopack</li><li>module federation</li><li>bundle analysis</li>
+          </ul>
+        </div>
+
+        <div class="mod reveal">
+          <div class="mod-top"><span class="mod-name">Data fetching</span><span class="mod-id">api</span></div>
+          <ul>
+            <li>REST · GraphQL · tRPC</li><li>server components</li><li>caching</li><li>optimistic UI</li><li>SSE streaming</li>
+          </ul>
+        </div>
+
+        <div class="mod reveal">
+          <div class="mod-top"><span class="mod-name">Framework internals</span><span class="mod-id">react</span></div>
+          <ul>
+            <li>Fiber &amp; reconciler</li><li>App vs Pages Router</li><li>SSR · SSG · ISR</li><li>suspense &amp; streaming</li>
+          </ul>
+        </div>
+
+        <div class="mod reveal">
+          <div class="mod-top"><span class="mod-name">Design handoff</span><span class="mod-id">collab</span></div>
+          <ul>
+            <li>Figma → code</li><li>design tokens</li><li>component-driven dev</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">02</span>
+        <div>
+          <h2 class="sec-title">Selected work</h2>
+          <p class="sec-sub">Shipped, in production, used by real people.</p>
+        </div>
+      </div>
+      <div class="work-grid">
+        <a class="proj reveal" href="https://meridianstudiobuild.vercel.app/" target="_blank" rel="noopener">
+          <span class="proj-year">2026 · Live</span>
+          <span class="proj-name">Meridian Studio <span class="arrow" aria-hidden="true">↗</span></span>
+          <p class="proj-desc">A marketing and showcase site for a Kenyan design-build firm — where vision meets craftsmanship. Built for clarity, motion, and a premium feel that holds up on any device.</p>
+          <div class="proj-tags"><span>React</span><span>Motion</span><span>Responsive</span><span>Vercel</span></div>
+        </a>
+        <a class="proj reveal" href="https://whitestarschools.com/" target="_blank" rel="noopener">
+          <span class="proj-year">2024 · Live</span>
+          <span class="proj-name">White Star Schools <span class="arrow" aria-hidden="true">↗</span></span>
+          <p class="proj-desc">A school website serving parents, students, and staff. Content-driven, accessible, and built to load fast on the connections people actually have.</p>
+          <div class="proj-tags"><span>Front-end</span><span>a11y</span><span>Performance</span><span>CMS</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section id="writing">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">03</span>
+        <div>
+          <h2 class="sec-title">Writing</h2>
+          <p class="sec-sub">Notes on craft, the platform, and building things that last.</p>
+        </div>
+      </div>
+
+      <!-- list view -->
+      <div id="post-list" class="post-list reveal"></div>
+
+      <!-- article view (hidden until a post is opened) -->
+      <article id="post-article" class="article hidden" tabindex="-1">
+        <button class="back" id="post-back" type="button">← All posts</button>
+        <span class="a-date" id="a-date"></span>
+        <h1 class="a-title" id="a-title"></h1>
+        <div class="a-body" id="a-body"></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section id="principles">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">04</span>
+        <div>
+          <h2 class="sec-title">How I work</h2>
+          <p class="sec-sub">The soft skills that decide whether the hard ones matter.</p>
+        </div>
+      </div>
+      <div class="principles">
+        <div class="prin">
+          <h3><span class="tag">USERS_FIRST</span>Responsibility scales with reach</h3>
+          <p>I think critically about what I'm building and how it shapes real lives. Reach comes with responsibility for the impact — the good and the bad — and I'd rather get that right than ship faster.</p>
+        </div>
+        <div class="prin">
+          <h3><span class="tag">PRAGMATIC</span>Opinionated, not ideological</h3>
+          <p>Languages and frameworks are tradeoffs, not religions. I have strong views, hold them loosely, and pick up whatever the problem actually needs — then learn it well.</p>
+        </div>
+        <div class="prin">
+          <h3><span class="tag">COMMS</span>Clear about the hard parts</h3>
+          <p>I explain technical decisions in plain language, in writing or live. In disagreement I engage with the other view honestly and compromise when it serves the work.</p>
+        </div>
+        <div class="prin">
+          <h3><span class="tag">TEAM</span>Building is not a solo act</h3>
+          <p>I like working across design, product, and engineering toward a shared goal. I care about learning and growing — and about helping the people around me do the same.</p>
+        </div>
+      </div>
+
+      <div class="ethos reveal" style="margin-top:1.4rem">
+        <p class="q">Automating the busy work so people get more time for their <span class="hl">life's work</span> — from a business's system of record to the AI agents that run alongside it.</p>
+        <p class="by">// the standard I'm working to set for how humans build in the AI era</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFF CLOCK -->
+  <section id="off">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">05</span>
+        <div>
+          <h2 class="sec-title">Off the clock</h2>
+          <p class="sec-sub">Where my curiosity wanders when there's no ticket open.</p>
+        </div>
+      </div>
+      <div class="off">
+        <span class="chip">reading <span class="who">Ada Lovelace</span></span>
+        <span class="chip">reading <span class="who">Douglas Engelbart</span></span>
+        <span class="chip">reading <span class="who">Alan Kay</span></span>
+        <span class="chip">the history of computing</span>
+        <span class="chip">art</span>
+        <span class="chip">history</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Let's build something durable.</h2>
+      <p>Open to front-end and full-stack-leaning roles, contract work, and collaborations where craft is taken seriously.</p>
+      <div class="cta-row">
+        <a href="mailto:hello@allanrono.dev" class="btn btn-primary">hello@allanrono.dev</a>
+        <a href="https://meridianstudiobuild.vercel.app/" target="_blank" rel="noopener" class="btn btn-ghost">View live work ↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span>© <span id="yr"></span> Allan Rono</span>
+    <span>Built by hand · Nairobi, KE</span>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
