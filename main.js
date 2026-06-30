@@ -1,5 +1,38 @@
 document.getElementById('yr').textContent = new Date().getFullYear();
 
+// ---------- HERO H1 WORD REVEAL ----------
+(function revealH1() {
+  const h1 = document.querySelector('.hero h1');
+  if (!h1 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  // Walk child nodes so we preserve <span class="accent"> wrappers
+  const wrap = (node) => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const words = node.textContent.split(/(\s+)/);
+      const frag = document.createDocumentFragment();
+      words.forEach((chunk, i) => {
+        if (/^\s+$/.test(chunk) || chunk === '') {
+          frag.appendChild(document.createTextNode(chunk));
+        } else {
+          const outer = document.createElement('span');
+          outer.className = 'word';
+          const inner = document.createElement('span');
+          inner.className = 'word-inner';
+          // delay increases by 60ms per word across the whole headline
+          inner.style.animationDelay = `${(wordIndex++) * 60}ms`;
+          inner.textContent = chunk;
+          outer.appendChild(inner);
+          frag.appendChild(outer);
+        }
+      });
+      node.replaceWith(frag);
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      Array.from(node.childNodes).forEach(wrap);
+    }
+  };
+  let wordIndex = 0;
+  Array.from(h1.childNodes).forEach(wrap);
+})();
+
 // ---------- THEME TOGGLE ----------
 (function initTheme() {
   const root = document.documentElement;

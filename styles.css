@@ -149,7 +149,6 @@ header.nav {
     radial-gradient(ellipse 65% 55% at 88% 0%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 65%),
     radial-gradient(ellipse 45% 50% at 5% 100%, color-mix(in srgb, var(--signal) 7%, transparent), transparent 60%);
 }
-
 .eyebrow {
   font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.08em;
   text-transform: uppercase; color: var(--accent); font-weight: 600;
@@ -157,15 +156,6 @@ header.nav {
   position: relative;
 }
 .eyebrow::before { content: ""; width: 26px; height: 1.5px; background: var(--accent); }
-.eyebrow::after {
-  content: ""; width: 6px; height: 6px; border-radius: 50%;
-  background: var(--accent); display: inline-block;
-  animation: pulse-dot 2.4s ease-in-out infinite;
-}
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 40%, transparent); }
-  60% { opacity: 0.7; box-shadow: 0 0 0 6px transparent; }
-}
 
 h1 {
   font-family: var(--display); font-weight: 700;
@@ -174,6 +164,20 @@ h1 {
   margin: 1.1rem 0 0; max-width: 16ch;
 }
 h1 .accent { color: var(--accent); }
+
+/* Word-reveal animation — each .word clips from below */
+.word { display: inline-block; overflow: hidden; vertical-align: bottom; }
+.word-inner {
+  display: inline-block;
+  transform: translateY(110%);
+  animation: word-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes word-up {
+  to { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .word-inner { transform: none; animation: none; }
+}
 
 .lede {
   font-size: clamp(1.08rem, 1rem + 0.5vw, 1.32rem);
